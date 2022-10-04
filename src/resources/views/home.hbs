@@ -1,0 +1,38 @@
+<div class="mt-4">
+  <div class="row">
+    {{#each post}}
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="card" style="width: 60rem; margin-bottom: 10px;">
+            <div class="card-body">
+              <h4 class="card-title">{{this.title}}</h4>
+              <small class="text-muted cat">
+                <i class="far fa-clock text-info"></i>
+                30 minutes
+                <i class="fas fa-users text-info"></i>
+                4 portions
+              </small>
+              <p class="card-text">{{this.description}}</p>
+              <a href="/{{this.id}}" class="btn btn-info">Read Recipe</a>
+            </div>
+            <div
+              class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0"
+            >
+              <div class="views">Last updated 3 mins ago
+              </div>
+              <div class="stats">
+                    <form action="/post/delete/{{this.id}}" method="get">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+</div>
